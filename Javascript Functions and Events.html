@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScipt | Functions &  Events</title>
+</head>
+<body onload="init()">
+	<!--<button onclick="getDate()">Get Date</button>-->
+	<!--<button onmouseover="getDate()">Get Date</button>-->
+	<button ondblclick="getDate()">Get Date</button>
+
+	<h1 id="showDate"></h1>
+
+	<!-- <form onsubmit="submitForm()"> -->
+	<form id="myForm">
+		<div>
+			<label>Name</label>
+			<input type="text" id="name" onblur="test()">
+		</div>	
+		<div>
+			<label>Email</label>
+			<input type="text" id="email">
+		</div>	
+		<input type="submit" value="submit">
+	</form>
+
+	<script type="text/javascript">
+
+
+	/*	function sayHello(){
+			alert('Hello');
+		}
+
+		function sayHello(greeting, name = 'Jeff'){
+			alert(greeting+ ' ' +name);
+		}
+
+		sayHello('Hello');
+
+		function getSum(a,b){
+			return a + b;
+		}
+
+		var sum = getSum(4,5);
+		console.log('The answer is ' +getSum(4,5)); */
+/* 
+getDate() Get the day as a number (1 - 31)
+getDay() Get the weekday as a number (0-6)
+getFullYear() Get the four digit year (yyyy)
+getHours() Get the hour (0-23)
+getMilliseconds() Get the milliseconds (0-999)
+getMinutes() Get the minutes (0-59)
+getMonth() Get the month (0-11)
+getSeconds() Get the seconds (0-59)
+getTime() Get the time (milliseconds since January 1, 1970)
+
+onblur
+onchange
+onfocus
+onselect
+onreset
+onkeydown
+onkeyup
+onkeypress
+
+*/
+
+/*	function getDate(){
+		var d = new Date();
+		//alert(d.getDate());
+		//alert(d.getDay());
+		alert(d);
+	}
+*/
+
+	function getDate(){
+		var d = new Date();
+		document.getElementById('showDate').innerHTML = d;
+	}
+
+	function submitForm(e){
+		e.preventDefault();
+		var name = document.getElementById('name').value;
+		var email = document.getElementById('email').value;
+
+		console.log(email);
+	}
+
+	function test(){
+		alert('Blur');
+	}
+
+	function init(){
+		console.log('Page Loaded');
+	}
+	document.getElementById('myForm').addEventListener('submit',submitForm, false);
+	</script>
+</body>
+</html>
